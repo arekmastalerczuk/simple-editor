@@ -6,8 +6,41 @@
 body {
   background: $wtf;
   color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  &__header {
+    grid-column-start: 2;
+  }
+}
+
+.editor {
+  &__label {
+    display: block;
+  }
+}
+
+.form {
+  position: relative;
+  display: block;
+  width: 450px;
+  grid-column: 3 / 6;
+  grid-row-start: 2;
+}
+
+.button {
+  display: block;
+  &__load {
+    position: absolute;
+    bottom: -30px;
+    right: 120px;
+  }
+  &__save {
+    position: absolute;
+    bottom: -30px;
+    right: 50px;
+  }
 }
