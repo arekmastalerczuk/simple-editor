@@ -8,7 +8,7 @@
   <body>
     <main class="main">
       <h1 class="main__header">My editor</h1>
-      <form class="form" action="#">
+      <form class="editor" action="#">
         <label class="editor__label" for="editor"
           >here is my my first simple editor</label
         >
@@ -17,9 +17,11 @@
           id="editor"
           cols="50"
           rows="10"
+          class="form__area form__area--js"
         ></textarea>
+        <button class="button button__reset button__reset--js">reset</button>
         <button class="button button__load button__load--js">load</button>
-        <button class="button button__save button__save__js">save</button>
+        <button class="button button__save button__save--js">save</button>
       </form>
     </main>
   </body>
