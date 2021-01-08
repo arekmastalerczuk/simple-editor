@@ -9,18 +9,20 @@ import "../scss/main.scss";
 const loadButton = document.querySelector(".button__load--js");
 const saveButton = document.querySelector(".button__save--js");
 const resetButton = document.querySelector(".button__reset--js");
-let textInfo = document.querySelector(".form__area--js");
-textInfo.innerHTML = localStorage.getItem("cookie");
+const textInfo = document.querySelector(".form__area--js");
 
-saveButton.addEventListener("click", () => {
-  localStorage.setItem("cookie", textInfo.value);
+saveButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  localStorage.setItem("entry", textInfo.value);
 });
 
-loadButton.addEventListener("click", () => {
-  textInfo.innerHTML = localStorage.getItem("cookie");
+loadButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  textInfo.value = localStorage.getItem("entry");
 });
 
-resetButton.addEventListener("click", () => {
-  localStorage.removeItem("cookie");
-  textInfo.innerHTML = "";
+resetButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  localStorage.removeItem("entry");
+  textInfo.value = "";
 });
